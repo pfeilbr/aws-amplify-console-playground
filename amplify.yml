@@ -1,0 +1,47 @@
+version: 0.1
+env:
+  variables:
+    myKey: myValue
+backend:
+  phases:
+    preBuild:
+      commands:
+        - echo "preBuild"
+        - env
+        - cd backend
+    build:
+      commands:
+        - echo "build"
+        - env
+    postBuild:
+      commands:
+        - echo "postBuild"
+        - env
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - echo "preBuild"
+        - env
+        - cd frontend
+        - npm ci
+    build:
+      commands:
+        - echo "build"
+        - env
+        - npm run build
+  artifacts:
+    files:
+      - "**/*"
+    discard-paths: no
+    baseDirectory: public
+  cache:
+    paths:
+      - node_modules/**/*
+  customHeaders:
+    - pattern: "file-pattern"
+      headers:
+        - key: "custom-header-name"
+          value: "custom-header-value"
+        - key: "custom-header-name"
+          value: "custom-header-value"
