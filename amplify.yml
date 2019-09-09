@@ -14,7 +14,7 @@ backend:
         - echo "build"
         - env
         - aws sts get-caller-identity
-        - UUID=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1)
+        - UUID=$(cat /dev/urandom | tr -dc 'a-z0-9' | fold -w 32 | head -n 1)
         - BUCKET=sam-deploy-bucket-$UUID
         - aws s3 mb s3://$BUCKET
         - STACK_NAME=sam-hello-world-v0
