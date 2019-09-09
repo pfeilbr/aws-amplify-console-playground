@@ -14,7 +14,9 @@ backend:
         - echo "build"
         - env
         - aws sts get-caller-identity
-        - BUCKET=sam-deploy-bucket-01
+        - UUID=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1)
+        - BUCKET=sam-deploy-bucket-$UUID
+        - aws s3 mb s3://$BUCKET
         - STACK_NAME=sam-hello-world-v0
         - sam package --debug --template-file template.yaml --s3-bucket $BUCKET --output-template-file packaged.yaml
         - sam deploy --debug --template-file packaged.yaml --stack-name $STACK_NAME --capabilities CAPABILITY_IAM
