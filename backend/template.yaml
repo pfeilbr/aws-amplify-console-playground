@@ -8,3 +8,4 @@ Resources:
     Properties:
       Runtime: nodejs8.10
       Handler: index.handler
+      CodeUri: ./
