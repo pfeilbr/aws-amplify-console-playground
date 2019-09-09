@@ -16,3 +16,10 @@ showing assumed role in codebuild env
 
 Update SAM deploy bucket policy to allow amplify service (`amplify.amazonaws.com`) to read/write to bucket.
 ![](https://www.evernote.com/l/AAHR9UMPba1ExLJ3iyLjgFUXFRWfOZhHP-0B/image.png)
+
+Custom Domain configuration
+
+![](https://www.evernote.com/l/AAF1AkVJrulEaqzahfCSFkXqjg48rR0uAyMB/image.png)
+
+App running on custom domain <https://amplify-master.minote.net/>
+![](https://www.evernote.com/l/AAGOQ8JEMwZEyKLvrvI8DHNtjnK2FR-Y9RUB/image.png)
