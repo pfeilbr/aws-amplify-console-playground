@@ -8,7 +8,11 @@ Build setting are defined in [`amplify.yml`](amplify.yml).  See [Configuring Bui
 
 ---
 
+set amplify service role.  codebuild env will assume this role and commands will execute in this context.
 ![](https://www.evernote.com/l/AAGKI4wgfUZB7YtWVDmqTmfg9YEzYSa4L38B/image.png)
+
+showing assumed role in codebuild env
+![](https://www.evernote.com/l/AAFxwKOPnvJLYb7DpmMr5vF7wLiU-xHSxUQB/image.png)
 
 Update SAM deploy bucket policy to allow amplify service (`amplify.amazonaws.com`) to read/write to bucket.
 ![](https://www.evernote.com/l/AAHR9UMPba1ExLJ3iyLjgFUXFRWfOZhHP-0B/image.png)

@@ -7,12 +7,10 @@ backend:
     preBuild:
       commands:
         - echo "preBuild"
-        - env
         - cd backend
     build:
       commands:
         - echo "build"
-        - env
         - aws sts get-caller-identity
         #        - UUID=$(cat /dev/urandom | tr -dc 'a-z0-9' | fold -w 32 | head -n 1)
         - BUCKET=sam-deploy-bucket-01
@@ -23,27 +21,25 @@ backend:
     postBuild:
       commands:
         - echo "postBuild"
-        - env
         - cd ..
 frontend:
   phases:
     preBuild:
       commands:
         - echo "preBuild"
-        - env
         - pwd
         - cd frontend
         - npm ci
     build:
       commands:
         - echo "build"
-        - env
         - npm run build
+        - ls
   artifacts:
     files:
       - "**/*"
     discard-paths: no
-    baseDirectory: public
+    baseDirectory: frontend/public
   cache:
     paths:
       - node_modules/**/*
