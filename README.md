@@ -9,3 +9,6 @@ Build setting are defined in [`amplify.yml`](amplify.yml).  See [Configuring Bui
 ---
 
 ![](https://www.evernote.com/l/AAGKI4wgfUZB7YtWVDmqTmfg9YEzYSa4L38B/image.png)
+
+Update SAM deploy bucket policy to allow amplify service (`amplify.amazonaws.com`) to read/write to bucket.
+![](https://www.evernote.com/l/AAHR9UMPba1ExLJ3iyLjgFUXFRWfOZhHP-0B/image.png)

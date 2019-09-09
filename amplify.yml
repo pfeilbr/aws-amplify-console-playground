@@ -13,9 +13,11 @@ backend:
       commands:
         - echo "build"
         - env
+        - aws sts get-caller-identity
         - BUCKET=sam-deploy-bucket-01
-        - sam package --template-file template.yaml --s3-bucket sam-deploy-bucket-01 --output-template-file packaged.yaml
-        - sam deploy --template-file packaged.yaml --stack-name sam-hello-world-v0 --capabilities CAPABILITY_IAM
+        - STACK_NAME=sam-hello-world-v0
+        - sam package --template-file template.yaml --s3-bucket $BUCKET --output-template-file packaged.yaml
+        - sam deploy --template-file packaged.yaml --stack-name $STACK_NAME --capabilities CAPABILITY_IAM
     postBuild:
       commands:
         - echo "postBuild"
