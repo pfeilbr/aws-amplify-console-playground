@@ -24,12 +24,14 @@ backend:
       commands:
         - echo "postBuild"
         - env
+        - cd ..
 frontend:
   phases:
     preBuild:
       commands:
         - echo "preBuild"
         - env
+        - pwd
         - cd frontend
         - npm ci
     build:
