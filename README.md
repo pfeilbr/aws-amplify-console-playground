@@ -6,4 +6,6 @@ lean [AWS Amplify Console](https://docs.aws.amazon.com/amplify/latest/userguide/
 
 Build setting are defined in [`amplify.yml`](amplify.yml).  See [Configuring Build Settings](https://docs.aws.amazon.com/amplify/latest/userguide/build-settings.html) for YML Specification Syntax.
 
+---
+
 ![](https://www.evernote.com/l/AAGKI4wgfUZB7YtWVDmqTmfg9YEzYSa4L38B/image.png)
