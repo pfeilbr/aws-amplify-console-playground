@@ -4,7 +4,14 @@ learn [AWS Amplify Console](https://docs.aws.amazon.com/amplify/latest/userguide
 
 > AWS Amplify Console is a continuous delivery and hosting service for modern web applications. The AWS Amplify Console simplifies the deployment of your application front end and backend. Connect to your code repository and your front end and backend are deployed in a single workflow, on every code commit.
 
-Build setting are defined in [`amplify.yml`](amplify.yml).  See [Configuring Build Settings](https://docs.aws.amazon.com/amplify/latest/userguide/build-settings.html) for YML Specification Syntax.
+**Flow**
+
+1. You specify a source (github, bitbucket, gitlab, S3, zip file upload).
+2. On code change (commit), it checks out the code to a CodeBuild project.  Runs your build, test, [backend] deploy, etc.
+3. Deploys static web assets (.html, .js, .css, images) to S3 to be served with CloudFront
+4. Verifies deployment by visiting root site URL with various deveice form factors (iPhone, iPad, desktop) and taking screenshots.
+
+Build settings are defined in [`amplify.yml`](amplify.yml).  See [Configuring Build Settings](https://docs.aws.amazon.com/amplify/latest/userguide/build-settings.html) for YML Specification Syntax.
 
 ---
 
@@ -23,3 +30,8 @@ Custom Domain configuration
 
 App running on custom domain <https://amplify-master.minote.net/>
 ![](https://www.evernote.com/l/AAGOQ8JEMwZEyKLvrvI8DHNtjnK2FR-Y9RUB/image.png)
+
+## Resources
+
+* [Amplify Console | Getting Started](https://aws.amazon.com/amplify/console/getting-started/)
+* [aws-amplify/amplify-console](https://github.com/aws-amplify/amplify-console)
